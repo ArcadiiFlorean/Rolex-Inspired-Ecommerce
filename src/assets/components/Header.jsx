@@ -14,21 +14,21 @@ function Header() {
   ];
 
   return (
-    <header className="dark:bg-gray-800 bg-white shadow-md sticky top-0 z-50 w-full">
+    <header className="dark:bg-[#003B28] bg-white shadow-md sticky top-0 z-50 w-full">
       <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
         {/* Logo */}
         <div className="text-2xl font-bold uppercase text-gray-800 dark:text-white">
           <img
             src="rolex-logo.svg"
-            className="w-12 h-auto m-auto"
-            alt="Watch"
+            className="w-[120px] h-auto m-auto"
+            alt="Rolex Logo"
           />
         </div>
 
         {/* Desktop Nav */}
         <nav className="hidden lg:flex gap-6 text-gray-800 dark:text-white text-lg uppercase">
           {navLinks.map((link) => (
-            <Link key={link.name} to={link.to} className="hover:text-green-600">
+            <Link key={link.name} to={link.to} className="hover:text-[#D4AF37]">
               {link.name}
             </Link>
           ))}
@@ -52,13 +52,13 @@ function Header() {
 
       {/* Mobile Dropdown Menu */}
       {menuOpen && (
-        <div className="lg:hidden bg-white dark:bg-gray-900 px-6 pb-4 pt-2 space-y-3 shadow">
+        <div className="lg:hidden bg-white dark:bg-[#003B28] px-6 pb-4 pt-2 space-y-3 shadow">
           {navLinks.map((link) => (
             <Link
               key={link.name}
               to={link.to}
               onClick={() => setMenuOpen(false)}
-              className="block text-gray-800 dark:text-white text-lg hover:text-green-600"
+              className="block text-gray-800 dark:text-white text-lg hover:text-[#D4AF37]"
             >
               {link.name}
             </Link>
