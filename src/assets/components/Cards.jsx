@@ -1,5 +1,5 @@
-import { useNavigate } from "react-router-dom";
 import React, { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
@@ -33,45 +33,38 @@ function Cards() {
       description: "Iconic design. Timeless performance.",
       price: "$3,599.99",
     },
+       {
+      title: "Rolex Deepsea",
+      image: "https://images.unsplash.com/photo-1620625515032-6ed0c1790c75?q=80&w=1964&auto=format&fit=crop",
+      description: "Iconic design. Timeless performance.",
+      price: "$3,599.99",
+    },
   ];
 
   return (
     <section className="w-full bg-white dark:bg-[#0A2025] py-9 px-8">
       <div className="mx-auto max-w-[1160px]">
-        <header className="h-12 mb-8 justify-between items-center flex">
-          <h2 className="text-[#0A2025] dark:text-white text-2xl font-bold">
-            ROLEX
-          </h2>
+        <header className="h-12 mb-8 flex justify-between items-center">
+          <h2 className="text-[#0A2025] dark:text-white text-2xl font-bold">ROLEX</h2>
         </header>
 
-        <main className="flex flex-col md:flex-row gap-10">
+        <main className="flex flex-col md:flex-row gap-10 flex-wrap justify-center">
           {products.map((product, index) => (
             <div
               key={index}
-              className="max-w-sm"
+              onClick={() => navigate("/product", { state: product })}
+              className="max-w-sm w-full cursor-pointer rounded-xl border border-gray-200 dark:border-gray-700 p-4 hover:shadow-xl transition-all duration-300"
               data-aos="fade-up"
               data-aos-delay={index * 100}
             >
               <img
-                onClick={() => navigate("/product", { state: product })}
-                className="mb-7 rounded-xl transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-xl cursor-pointer"
                 src={product.image}
                 alt={product.title}
+                className="w-full h-64 object-cover rounded-lg mb-5 transition-transform duration-300 ease-in-out hover:scale-105"
               />
-              <div>
-                <h3 className="text-[#0A2025] dark:text-white text-2xl font-bold">
-                  {product.title}
-                </h3>
-                <p className="mt-5 mb-8 text-[#0A2025] dark:text-white text-sm">
-                  {product.description}
-                </p>
-                <button
-                  onClick={() => navigate("/product", { state: product })}
-                  className="text-[#3e9d26] text-sm font-semibold"
-                >
-                  Shop
-                </button>
-              </div>
+              <h3 className="text-[#0A2025] dark:text-white text-xl font-bold mb-2">{product.title}</h3>
+              <p className="text-[#0A2025] dark:text-white text-sm mb-3">{product.description}</p>
+              <p className="text-[#3e9d26] font-semibold text-md">{product.price}</p>
             </div>
           ))}
         </main>
