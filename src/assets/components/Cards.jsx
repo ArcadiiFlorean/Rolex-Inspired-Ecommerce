@@ -1,7 +1,18 @@
 import { useNavigate } from "react-router-dom";
+import React, { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 function Cards() {
   const navigate = useNavigate();
+
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      offset: 100,
+      once: true,
+    });
+  }, []);
 
   const products = [
     {
@@ -35,7 +46,12 @@ function Cards() {
 
         <main className="flex flex-col md:flex-row gap-10">
           {products.map((product, index) => (
-            <div key={index} className="max-w-sm">
+            <div
+              key={index}
+              className="max-w-sm"
+              data-aos="fade-up"
+              data-aos-delay={index * 100}
+            >
               <img
                 onClick={() => navigate("/product", { state: product })}
                 className="mb-7 rounded-xl transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-xl cursor-pointer"

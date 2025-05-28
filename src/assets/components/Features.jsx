@@ -1,17 +1,34 @@
 import React from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 
 function FeatureSection({ title, description, imageUrl, reverse }) {
   return (
-    <div className="relative">
-      <div className={`lg:mx-auto lg:grid lg:max-w-7xl lg:grid-cols-2 lg:gap-24 lg:px-8 ${reverse ? 'lg:grid-flow-col-dense' : ''}`}>
-        <div className={`mx-auto max-w-xl px-6 lg:mx-0 lg:max-w-none lg:py-16 lg:px-0 ${reverse ? 'lg:col-start-2' : ''}`}>
+    <div className="relative" data-aos={reverse ? "fade-left" : "fade-right"}>
+      <div
+        className={`lg:mx-auto lg:grid lg:max-w-7xl lg:grid-cols-2 lg:gap-24 lg:px-8 ${
+          reverse ? "lg:grid-flow-col-dense" : ""
+        }`}
+      >
+        <div
+          className={`mx-auto max-w-xl px-6 lg:mx-0 lg:max-w-none lg:py-16 lg:px-0 ${
+            reverse ? "lg:col-start-2" : ""
+          }`}
+        >
           <div>
-            
             <div className="mt-6">
-              <h2 className="text-3xl font-bold tracking-tight text-white font-serif">{title}</h2>
-              <p className="mt-4 text-lg text-gray-300 font-light leading-relaxed">{description}</p>
+              <h2 className="text-3xl font-bold tracking-tight text-white font-serif">
+                {title}
+              </h2>
+              <p className="mt-4 text-lg text-gray-300 font-light leading-relaxed">
+                {description}
+              </p>
               <div className="mt-6">
-                <a href="#" className="inline-flex rounded-lg bg-[#005C3C] px-5 py-2 text-base font-semibold text-white hover:bg-[#004a30] transition-colors">
+                <a
+                  href="#"
+                  className="inline-flex rounded-lg bg-[#005C3C] px-5 py-2 text-base font-semibold text-white hover:bg-[#004a30] transition-colors"
+                >
                   Learn More
                 </a>
               </div>
@@ -20,8 +37,13 @@ function FeatureSection({ title, description, imageUrl, reverse }) {
         </div>
 
         <div className="mt-12 sm:mt-16 lg:mt-0">
-          <div className={`${reverse ? '-ml-48 pr-6' : '-mr-48 pl-6'} lg:relative lg:m-0 lg:h-full lg:px-0`}>
+          <div
+            className={`${
+              reverse ? "-ml-48 pr-6" : "-mr-48 pl-6"
+            } lg:relative lg:m-0 lg:h-full lg:px-0`}
+          >
             <img
+              data-aos="zoom-in"
               src={imageUrl}
               alt=""
               className="w-full rounded-xl shadow-2xl ring-1 ring-black ring-opacity-5 lg:absolute lg:h-full lg:w-auto lg:max-w-none"
@@ -34,6 +56,14 @@ function FeatureSection({ title, description, imageUrl, reverse }) {
 }
 
 export default function Features() {
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      offset: 100,
+      once: true,
+    });
+  }, []);
+
   return (
     <div className="bg-[#797979] py-20">
       <FeatureSection
