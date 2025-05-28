@@ -26,13 +26,14 @@ function Hero() {
             </div>
           </div>
 
-          <div className="hidden sm:block sm:w-1/3 lg:w-3/5 relative">
-            <img
-              src="https://www.tailwind-kit.com/images/object/10.png"
-              className="max-w-xs md:max-w-sm m-auto"
-              alt="Watch"
-            />
-          </div>
+      <div className="hidden sm:block sm:w-1/3 lg:w-3/5 relative">
+  <img
+    src="rolex-logo.svg"
+    className="max-w-lg md:max-w-2xl m-auto"
+    alt="Watch"
+  />
+</div>
+
         </div>
       </div>
     </main>
