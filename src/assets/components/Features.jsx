@@ -4,28 +4,37 @@ import "aos/dist/aos.css";
 
 function FeatureSection({ title, description, imageUrl, reverse }) {
   return (
-    <div className="relative" data-aos={reverse ? "fade-left" : "fade-right"}>
+    <div
+      className="relative py-16"
+      data-aos={reverse ? "fade-left" : "fade-right"}
+    >
       <div
         className={`lg:mx-auto lg:grid lg:max-w-7xl lg:grid-cols-2 lg:gap-24 lg:px-8 ${
           reverse ? "lg:grid-flow-col-dense" : ""
         }`}
       >
+        {/* Text Section */}
         <div
           className={`mx-auto max-w-xl px-6 lg:mx-0 lg:max-w-none lg:py-16 lg:px-0 ${
             reverse ? "lg:col-start-2" : ""
           }`}
         >
-          <div className="mt-6">
-            <h2 className="text-3xl font-bold tracking-tight text-[#1A1A1A] font-serif">
+          <div>
+            <h2 className="text-3xl font-bold tracking-wide text-[#1A1A1A] font-serif uppercase">
               {title}
             </h2>
-            <p className="mt-4 text-lg text-[#5C5C5C] font-light leading-relaxed">
+
+            {/* Golden Line */}
+            <div className="w-20 h-1 bg-[#D4AF37] mt-4 mb-6"></div>
+
+            <p className="text-lg text-[#5C5C5C] font-light leading-relaxed">
               {description}
             </p>
+
             <div className="mt-6">
               <a
                 href="#"
-                className="inline-flex rounded-lg bg-[#003B28] px-5 py-2 text-base font-semibold text-white hover:bg-[#004a30] transition-colors"
+                className="inline-flex rounded-full border border-[#D4AF37] px-6 py-2 text-base font-medium text-[#D4AF37] hover:bg-[#D4AF37] hover:text-white transition-all duration-300"
               >
                 Learn More
               </a>
@@ -33,6 +42,7 @@ function FeatureSection({ title, description, imageUrl, reverse }) {
           </div>
         </div>
 
+        {/* Image Section */}
         <div className="mt-12 sm:mt-16 lg:mt-0">
           <div
             className={`${

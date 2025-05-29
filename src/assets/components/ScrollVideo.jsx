@@ -1,44 +1,31 @@
-// src/components/ScrollVideo.jsx
-import { useEffect } from "react";
+import React, { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
 const ScrollVideo = () => {
   useEffect(() => {
-    AOS.init({ duration: 1000, once: true });
+    AOS.init({ duration: 1000, offset: 100, once: true });
   }, []);
 
   return (
-    <div className="relative w-full h-full">
-      {/* Background Video */}
-      <div className="fixed top-0 left-0 w-full h-screen -z-10 overflow-hidden">
-        <video
-          className="w-full h-full object-cover"
-          autoPlay
-          muted
-          loop
-          playsInline
-        >
-          <source src="/Video-Rolex.mp4" type="video/mp4" />
-        </video>
-      </div>
+    <section className="relative min-h-screen z-10">
+      {/* Background doar pentru contrast */}
+      <div className="absolute inset-0 bg-black/80 -z-10" />
 
-      {/* Content Sections */}
-      <section className="h-screen flex items-center justify-center text-white text-5xl font-bold bg-black/50">
-        <h1 data-aos="fade-up">Welcome to Rolex World</h1>
-      </section>
-
-      <section className="h-screen flex items-center justify-center text-white text-5xl font-bold bg-black/50">
-        {/* <h1 data-aos="fade-up">Explore Our Watches</h1> */}
-        <div className="flex items-center gap-2">
-          <img className="w-[800px] h-auto" src="/rolex-logo.svg" alt="Rolex Logo" />
+      {/* Content */}
+      <div className="flex items-center justify-center min-h-screen px-6 text-white text-center">
+        <div className="max-w-3xl" data-aos="fade-up">
+          <h2 className="text-4xl sm:text-5xl font-bold mb-6">
+            A Legacy in Motion
+          </h2>
+          <p className="text-lg text-gray-300">
+            From the depths of the ocean to the heights of achievement, every
+            Rolex is a symbol of endurance, elegance, and innovation. Crafted
+            with purpose — worn with pride.
+          </p>
         </div>
-      </section>
-
-      <section className="h-screen flex items-center justify-center text-white text-5xl font-bold bg-black/50">
-        <h1 data-aos="fade-up">Luxury & Precision</h1>
-      </section>
-    </div>
+      </div>
+    </section>
   );
 };
 

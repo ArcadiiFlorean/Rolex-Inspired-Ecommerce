@@ -7,64 +7,80 @@ function Cards() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    AOS.init({
-      duration: 1000,
-      offset: 100,
-      once: true,
-    });
+    AOS.init({ duration: 1000, offset: 100, once: true });
   }, []);
 
   const products = [
-    {
-      title: "ChronoEdge Sapphire Watch",
-      image: "https://images.unsplash.com/photo-1619976491498-f2dadb25fb3b?q=80&w=1964&auto=format&fit=crop",
-      description: "Unmatched elegance and precision — the legacy of Rolex.",
-      price: "$2,999.99",
+        {
+      title: "Omega Aqua Terra",
+      price: "£41,200",
+      image:
+        "https://media.rolex.com/image/upload/q_auto:eco/f_auto/t_v7-majesty/c_limit,w_1200/v1/catalogue/2025/upright-c/m126508-0008",
+      size: "Oyster, 40 mm, Oystersteel and white gold",
+      reference: "Reference 126231",
     },
     {
-      title: "Rolex Gold Edition",
-      image: "https://images.unsplash.com/photo-1619976396248-56d05beb2919?q=80&w=1964&auto=format&fit=crop",
-      description: "Crafted to impress. Worn to lead.",
-      price: "$4,199.99",
+      title: "Cosmograph Daytona",
+      price: "£31,750",
+      image:
+        "https://media.rolex.com/image/upload/q_auto:eco/f_auto/t_v7-majesty/c_limit,w_1200/v1/catalogue/2025/upright-c/m126518ln-0014",
+      size: "Oyster, 40 mm, Oystersteel and white gold",
+      reference: "Reference 126231",
     },
     {
-      title: "Rolex Deepsea",
-      image: "https://images.unsplash.com/photo-1620625515032-6ed0c1790c75?q=80&w=1964&auto=format&fit=crop",
-      description: "Iconic design. Timeless performance.",
-      price: "$3,599.99",
+      title: "Rolex Day-Date",
+      price: "£50,600",
+      image:
+        "https://media.rolex.com/image/upload/q_auto:eco/f_auto/t_v7-majesty/c_limit,w_1200/v1/catalogue/2025/upright-c/m336935-0005",
+      size: "Oyster, 40 mm, Oystersteel and white gold",
+      reference: "Reference 126231",
     },
-       {
-      title: "Rolex Deepsea",
-      image: "https://images.unsplash.com/photo-1620625515032-6ed0c1790c75?q=80&w=1964&auto=format&fit=crop",
-      description: "Iconic design. Timeless performance.",
-      price: "$3,599.99",
+    {
+      title: "Rolex Yacht-Master",
+      price: "£13,600",
+      image:
+        "https://media.rolex.com/image/upload/q_auto:eco/f_auto/t_v7-majesty/c_limit,w_1200/v1/catalogue/2025/upright-c/m126231-0020",
+      size: "Oyster, 40 mm, Oystersteel and white gold",
+      reference: "Reference 126231",
     },
   ];
 
   return (
-    <section className="w-full bg-white dark:bg-[#0A2025] py-9 px-8">
-      <div className="mx-auto max-w-[1160px]">
-        <header className="h-12 mb-8 flex justify-between items-center">
-          <h2 className="text-[#0A2025] dark:text-white text-2xl font-bold">ROLEX</h2>
+    <section className="w-full bg-[#EFE7DC] py-20 px-6">
+      <div className="mx-auto max-w-[1240px]">
+        <header className="mb-12 text-center">
+          <h2 className="text-3xl sm:text-4xl font-semibold text-[#0A2025] uppercase tracking-wide">
+            Signature Timepieces
+          </h2>
+          <div className="w-24 h-1 bg-[#D4AF37] mx-auto mt-4"></div>
         </header>
 
-        <main className="flex flex-col md:flex-row gap-10 flex-wrap justify-center">
+        <main className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {products.map((product, index) => (
             <div
               key={index}
               onClick={() => navigate("/product", { state: product })}
-              className="max-w-sm w-full cursor-pointer rounded-xl border border-gray-200 dark:border-gray-700 p-4 hover:shadow-xl transition-all duration-300"
+              className="bg-white rounded-xl border border-gray-200 shadow-sm hover:shadow-xl transition-all duration-300 cursor-pointer group overflow-hidden"
               data-aos="fade-up"
               data-aos-delay={index * 100}
             >
               <img
                 src={product.image}
                 alt={product.title}
-                className="w-full h-64 object-cover rounded-lg mb-5 transition-transform duration-300 ease-in-out hover:scale-105"
+                className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105"
               />
-              <h3 className="text-[#0A2025] dark:text-white text-xl font-bold mb-2">{product.title}</h3>
-              <p className="text-[#0A2025] dark:text-white text-sm mb-3">{product.description}</p>
-              <p className="text-[#3e9d26] font-semibold text-md">{product.price}</p>
+
+              <div className="p-5">
+                <h3 className="text-xl font-semibold text-[#0A2025] group-hover:text-[#D4AF37] transition-colors duration-300">
+                  {product.title}
+                </h3>
+                <p className="text-sm text-[#444] mt-2 mb-3">
+                  {product.description}
+                </p>
+                <p className="text-[#217A3C] font-bold text-lg">
+                  {product.price}
+                </p>
+              </div>
             </div>
           ))}
         </main>

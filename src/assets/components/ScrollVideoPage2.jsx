@@ -12,7 +12,7 @@
 //     <div className="relative w-full h-full">
 //       {/* Background Photo */}
 //       <div className="fixed top-0 left-0 w-full h-screen -z-10 overflow-hidden">
-//       <img src="https://images.unsplash.com/photo-1600003014755-ba31aa59c4b6?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" />
+//       <img src="" alt="" />
 //       </div>
 
 //       {/* Content Sections */}
