@@ -19,7 +19,7 @@ function Header() {
         {/* Logo */}
         <div className="text-2xl font-bold uppercase text-gray-800 dark:text-white">
           <img
-            src="rolex-logo.svg"
+            src="rolex-header.png"
             className="w-[120px] h-auto m-auto"
             alt="Rolex Logo"
           />
@@ -63,10 +63,7 @@ function Header() {
               {link.name}
             </Link>
           ))}
-          <div className="flex flex-col gap-2 mt-4">
-            <Button label="Shop now" />
-            <Button label="See Collection" />
-          </div>
+     
         </div>
       )}
     </header>
