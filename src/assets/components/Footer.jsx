@@ -42,8 +42,8 @@ function Footer() {
           <div>
             <h3 className="text-lg font-semibold mb-6">Contact</h3>
             <ul className="space-y-3 text-gray-300">
-              <li>Email: info@rolex.com</li>
-              <li>Phone: +41 22 302 22 00</li>
+              <li>Email: arcadiiflorean789@gmail.com</li>
+              <li>Phone: +44 7454 185152 </li>
               <li>Location: Geneva, Switzerland</li>
             </ul>
           </div>
