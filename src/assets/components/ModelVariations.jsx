@@ -1,6 +1,4 @@
-import { useState, useEffect } from "react";
-import AOS from "aos";
-import "aos/dist/aos.css";
+import { useState } from "react";
 
 const baseWatchImage =
   "https://media.rolex.com/image/upload/q_auto:eco/f_auto/t_v7/c_limit,w_1920/v1/catalogue/2025/upright-c/m228235-0002";
@@ -30,13 +28,6 @@ export default function ModelVariations() {
   const [index, setIndex] = useState(0);
   const [fade, setFade] = useState(false);
 
-  useEffect(() => {
-    AOS.init({
-      duration: 800,
-      once: true,
-    });
-  }, []);
-
   const handleSelect = (i) => {
     setFade(true);
     setTimeout(() => {
@@ -47,26 +38,16 @@ export default function ModelVariations() {
 
   return (
     <section className="text-center py-10 px-4">
-      <h2
-        data-aos="fade-up"
-        className="text-5xl font-serif tracking-widest uppercase text-[#D4AF37] drop-shadow-md mb-6"
-      >
+      <h2 className="text-5xl font-serif tracking-widest uppercase text-[#D4AF37] drop-shadow-md mb-6">
         Customize your Rolex
       </h2>
 
-      <p
-        data-aos="fade-up"
-        data-aos-delay="100"
-        className="text-green-600 font-semibold cursor-pointer mb-8"
-      >
+      <p className="text-green-600 font-semibold cursor-pointer mb-8">
         💚 Add to favorites
       </p>
 
-      <div
-        className="relative w-72 h-72 sm:w-96 sm:h-96 md:w-[500px] md:h-[500px] lg:w-[550px] lg:h-[550px] mx-auto mb-10"
-        data-aos="zoom-in"
-        data-aos-delay="200"
-      >
+      {/* Imagine principală cu variație */}
+      <div className="relative w-72 h-72 sm:w-96 sm:h-96 md:w-[500px] md:h-[500px] lg:w-[550px] lg:h-[550px] mx-auto mb-10">
         <img
           src={baseWatchImage}
           alt="Base Watch"
@@ -81,11 +62,8 @@ export default function ModelVariations() {
         />
       </div>
 
-      <div
-        className="flex flex-wrap justify-center gap-8"
-        data-aos="fade-up"
-        data-aos-delay="300"
-      >
+      {/* Selectoare mari cu etichete */}
+      <div className="flex flex-wrap justify-center gap-8">
         {variations.map((v, i) => (
           <div key={v.id} className="flex flex-col items-center">
             <button
@@ -95,8 +73,6 @@ export default function ModelVariations() {
                   ? "scale-110 border-[#D4AF37] shadow-xl"
                   : "opacity-70 hover:opacity-100 hover:scale-105"
               }`}
-              data-aos="zoom-in"
-              data-aos-delay={400 + i * 100}
             >
               <img
                 src={v.image}
@@ -111,11 +87,8 @@ export default function ModelVariations() {
         ))}
       </div>
 
-      <p
-        className="mt-8 text-xl font-semibold text-gray-700 dark:text-gray-200"
-        data-aos="fade-in"
-        data-aos-delay="600"
-      >
+      {/* Etichetă activă */}
+      <p className="mt-8 text-xl font-semibold text-gray-700 dark:text-gray-200">
         {variations[index].label}
       </p>
     </section>
