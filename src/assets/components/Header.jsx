@@ -1,32 +1,43 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import Button from "./Buttons";
 
 function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   const navLinks = [
-    { name: "Home", to: "/" },
-    { name: "Watch", to: "/watch" },
-    { name: "Product", to: "/product" },
-    { name: "Contact", to: "/contact" },
-    { name: "Career", to: "/career" },
+    { name: "Find your rolex", to: "/watch" },
   ];
 
+  const handleLogoClick = () => {
+    if (location.pathname === "/") {
+      const el = document.getElementById("hero");
+      if (el) el.scrollIntoView({ behavior: "smooth" });
+    } else {
+      navigate("/", { state: { scrollToHero: true } });
+    }
+  };
+
   return (
-    <header className="dark:bg-[#003B28] bg-white shadow-md sticky top-0 z-50 w-full">
-      <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-        {/* Logo */}
-        <div className="text-2xl font-bold uppercase text-gray-800 dark:text-white">
+    <header className="dark:bg-[#003B28] py-6 bg-white shadow-md sticky top-0 z-50 w-full">
+      <div className="relative max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+        
+        {/* Logo Centrat Absolut */}
+        <div
+          className="absolute left-1/2 transform -translate-x-1/2 cursor-pointer"
+          onClick={handleLogoClick}
+        >
           <img
             src="rolex-header.png"
-            className="w-[120px] h-auto m-auto"
             alt="Rolex Logo"
+            className="w-[60px] h-auto"
           />
         </div>
 
-        {/* Desktop Nav */}
-        <nav className="hidden lg:flex gap-6 text-gray-800 dark:text-white text-lg uppercase">
+        {/* Text/Navigation în Dreapta */}
+        <nav className="ml-auto hidden lg:flex gap-6 text-gray-800 dark:text-white text-lg uppercase">
           {navLinks.map((link) => (
             <Link key={link.name} to={link.to} className="hover:text-[#D4AF37]">
               {link.name}
@@ -34,15 +45,9 @@ function Header() {
           ))}
         </nav>
 
-        {/* Desktop Buttons */}
-        <div className="hidden lg:flex gap-4">
-          <Button label="Shop now" />
-          <Button label="See Collection" />
-        </div>
-
-        {/* Mobile Menu Button */}
+        {/* Buton pentru Mobile */}
         <button
-          className="lg:hidden text-3xl text-gray-800 dark:text-white"
+          className="lg:hidden ml-auto text-3xl text-gray-800 dark:text-white"
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="Toggle menu"
         >
@@ -63,7 +68,6 @@ function Header() {
               {link.name}
             </Link>
           ))}
-     
         </div>
       )}
     </header>

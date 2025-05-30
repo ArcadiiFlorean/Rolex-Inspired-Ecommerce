@@ -11,7 +11,7 @@ function Hero() {
   return (
     <>
       {/* Fixed video background stays while scrolling */}
-      <div className="fixed top-0 left-0 w-full h-screen -z-10">
+      <div id="hero"  className="fixed top-0 left-0 w-full h-screen -z-10">
         <video
           autoPlay
           muted
@@ -25,7 +25,7 @@ function Hero() {
       </div>
 
       {/* Section with centered text that scrolls away */}
-      <section className="relative h-screen flex items-center justify-center px-6 text-white text-center">
+      <section  className="relative h-screen flex items-center justify-center px-6 text-white text-center">
         <div className="space-y-6 max-w-3xl" data-aos="fade-up">
           <h1 className="text-4xl sm:text-6xl font-light uppercase tracking-wide">
             A Crown for Every Achievement

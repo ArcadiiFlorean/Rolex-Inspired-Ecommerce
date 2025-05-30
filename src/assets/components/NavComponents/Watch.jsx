@@ -27,7 +27,7 @@ function Watch() {
       price: "£37,700",
       image:
         "https://media.rolex.com/image/upload/q_auto:eco/f_auto/t_v7-majesty/c_limit,w_1200/v1/catalogue/2025/upright-c/m279138rbr-0023",
-         size: "Oyster, 40 mm, Oystersteel and white gold",
+      size: "Oyster, 40 mm, Oystersteel and white gold",
       reference: "Reference 126231",
     },
     {
@@ -35,7 +35,7 @@ function Watch() {
       price: "£41,200",
       image:
         "https://media.rolex.com/image/upload/q_auto:eco/f_auto/t_v7-majesty/c_limit,w_1200/v1/catalogue/2025/upright-c/m126508-0008",
-         size: "Oyster, 40 mm, Oystersteel and white gold",
+      size: "Oyster, 40 mm, Oystersteel and white gold",
       reference: "Reference 126231",
     },
     {
@@ -43,7 +43,7 @@ function Watch() {
       price: "£31,750",
       image:
         "https://media.rolex.com/image/upload/q_auto:eco/f_auto/t_v7-majesty/c_limit,w_1200/v1/catalogue/2025/upright-c/m126518ln-0014",
-         size: "Oyster, 40 mm, Oystersteel and white gold",
+      size: "Oyster, 40 mm, Oystersteel and white gold",
       reference: "Reference 126231",
     },
     {
@@ -51,7 +51,7 @@ function Watch() {
       price: "£50,600",
       image:
         "https://media.rolex.com/image/upload/q_auto:eco/f_auto/t_v7-majesty/c_limit,w_1200/v1/catalogue/2025/upright-c/m336935-0005",
-         size: "Oyster, 40 mm, Oystersteel and white gold",
+      size: "Oyster, 40 mm, Oystersteel and white gold",
       reference: "Reference 126231",
     },
     {
@@ -59,17 +59,19 @@ function Watch() {
       price: "£13,600",
       image:
         "https://media.rolex.com/image/upload/q_auto:eco/f_auto/t_v7-majesty/c_limit,w_1200/v1/catalogue/2025/upright-c/m126231-0020",
-         size: "Oyster, 40 mm, Oystersteel and white gold",
+      size: "Oyster, 40 mm, Oystersteel and white gold",
       reference: "Reference 126231",
     },
+    
   ];
 
   return (
     <>
       <Header />
       <section className="px-6 py-16 bg-gradient-to-br from-[#f5f5f5] to-[#dcdcdc] dark:from-[#0a0a0a] dark:to-[#1a1a1a] min-h-screen">
-        <h1 className="text-4xl font-extrabold tracking-widest text-center text-[#0a0a0a] dark:text-white mb-12 uppercase">
-          Luxury Timepieces
+        <p className="text-white text-center text-4xl">Rolex watches</p>
+        <h1 className="text-8xl font-extrabold tracking-widest text-center text-[#0a0a0a] dark:text-white mb-12 ">
+          All models
         </h1>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 max-w-7xl mx-auto cursor-pointer">

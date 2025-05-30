@@ -4,6 +4,8 @@ import Aos from "aos";
 import "aos/dist/aos.css";
 import Header from "./Header";
 import Footer from "./Footer";
+import ModelVariations from "./ModelVariations";
+
 
 function ProductPages() {
   const { state } = useLocation();
@@ -58,6 +60,8 @@ function ProductPages() {
           </div>
         </div>
       </div>
+
+      <ModelVariations />
       <Footer />
     </>
   );

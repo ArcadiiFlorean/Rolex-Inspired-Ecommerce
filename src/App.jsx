@@ -13,6 +13,7 @@ import ScrollVideo from "./assets/components/ScrollVideo";
 
 
 
+
 // Pagina Watch din NavComponents
 import Watch from "./assets/components/NavComponents/Watch";
 import ProductDetail from "./pages/ProductDetail";
