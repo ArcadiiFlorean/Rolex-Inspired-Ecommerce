@@ -29,59 +29,68 @@ export default function ModelVariations() {
   const [fade, setFade] = useState(false);
 
   const handleSelect = (i) => {
-    setFade(true); // start fade out
+    setFade(true);
     setTimeout(() => {
       setIndex(i);
-      setFade(false); // fade back in
-    }, 200); // match duration-200
+      setFade(false);
+    }, 200);
   };
 
   return (
     <section className="text-center py-10">
-      <h2 className="text-2xl font-bold mb-2">Customize your Rolex</h2>
-      <p className="text-green-600 font-semibold cursor-pointer mb-6">
+      <h2 className="text-5xl font-serif tracking-widest uppercase text-[#D4AF37] drop-shadow-md mb-6">
+        Customize your Rolex
+      </h2>
+
+      <p className="text-green-600 font-semibold cursor-pointer mb-8">
         💚 Add to favorites
       </p>
 
-      <div className="relative w-60 h-60 mx-auto mb-6">
-        {/* Ceasul de bază */}
+      {/* Imagine principală cu variație */}
+<div className="relative w-[550px] h-[550px] mx-auto mb-10">
+
         <img
           src={baseWatchImage}
           alt="Base Watch"
           className="absolute top-0 left-0 w-full h-full object-contain z-0"
         />
-
-        {/* Variația suprapusă cu fade */}
         <img
           src={variations[index].image}
           alt={variations[index].label}
-          className={`absolute top-0 left-0 w-full h-full object-contain z-10 transition-opacity duration-200 ${
+          className={`absolute top-0 left-0 w-full h-full object-contain z-10 transition-opacity duration-300 ${
             fade ? "opacity-0" : "opacity-100"
           }`}
         />
       </div>
 
-      {/* Selectoare vizuale */}
-      <div className="flex justify-center gap-4">
+      {/* Selectoare mari cu etichete */}
+      <div className="flex justify-center gap-8">
         {variations.map((v, i) => (
-          <button
-            key={v.id}
-            onClick={() => handleSelect(i)}
-            className={`w-14 h-14 border-2 rounded-full overflow-hidden transition-transform ${
-              index === i ? "scale-110 border-[#D4AF37]" : "opacity-70"
-            }`}
-          >
-            <img
-              src={v.image}
-              alt={v.label}
-              className="w-full h-full object-cover"
-            />
-          </button>
+          <div key={v.id} className="flex flex-col items-center">
+            <button
+              onClick={() => handleSelect(i)}
+              className={`relative w-32 h-32 border-4 rounded-full overflow-hidden transition-transform duration-300 ${
+                index === i
+                  ? "scale-110 border-[#D4AF37] shadow-xl"
+                  : "opacity-70 hover:opacity-100 hover:scale-105"
+              }`}
+            >
+              {/* Imagine full cover în interiorul butonului */}
+              <img
+                src={v.image}
+                alt={v.label}
+                className="absolute top-0 left-0 w-full h-full object-cover"
+              />
+            </button>
+            <p className="mt-2 text-base text-gray-800 dark:text-white font-medium">
+              {v.label}
+            </p>
+          </div>
         ))}
       </div>
 
-      {/* Numele variației curente */}
-      <p className="mt-4 text-lg font-medium text-gray-700 dark:text-gray-200">
+      {/* Etichetă activă deasupra */}
+      <p className="mt-8 text-xl font-semibold text-gray-700 dark:text-gray-200">
         {variations[index].label}
       </p>
     </section>

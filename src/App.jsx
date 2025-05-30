@@ -9,10 +9,7 @@ import Cards from "./assets/components/Cards";
 import ProductPages from "./assets/components/ProductPages";
 import Footer from "./assets/components/Footer";
 import ScrollVideo from "./assets/components/ScrollVideo";
-
-
-
-
+import ModelVariations from "./assets/components/ModelVariations";
 
 // Pagina Watch din NavComponents
 import Watch from "./assets/components/NavComponents/Watch";
@@ -34,7 +31,7 @@ function App() {
               <Features />
 
               <Cards />
-
+              <ModelVariations />
               {/* <ScrollVideoPage2 /> */}
               <Footer />
             </>
@@ -46,9 +43,6 @@ function App() {
 
         {/* Pagina Watch */}
         <Route path="/watch" element={<Watch />} />
-
-
-
       </Routes>
     </Router>
   );
