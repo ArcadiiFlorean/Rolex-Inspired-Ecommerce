@@ -5,22 +5,22 @@ import "aos/dist/aos.css";
 function FeatureSection({ title, description, imageUrl, reverse }) {
   return (
     <div
-      className="relative py-16"
+      className="relative py-16 px-6"
       data-aos={reverse ? "fade-left" : "fade-right"}
     >
       <div
-        className={`lg:mx-auto lg:grid lg:max-w-7xl lg:grid-cols-2 lg:gap-24 lg:px-8 ${
+        className={`lg:mx-auto grid max-w-7xl grid-cols-1 lg:grid-cols-2 lg:gap-24 lg:px-8 ${
           reverse ? "lg:grid-flow-col-dense" : ""
         }`}
       >
         {/* Text Section */}
         <div
-          className={`mx-auto max-w-xl px-6 lg:mx-0 lg:max-w-none lg:py-16 lg:px-0 ${
+          className={`mx-auto max-w-xl lg:mx-0 lg:max-w-none lg:py-16 lg:px-0 ${
             reverse ? "lg:col-start-2" : ""
           }`}
         >
           <div>
-            <h2 className="text-3xl font-bold tracking-wide text-[#1A1A1A] font-serif uppercase">
+            <h2 className="text-3xl md:text-4xl font-bold tracking-wide text-[#1A1A1A] font-serif uppercase">
               {title}
             </h2>
 
@@ -43,17 +43,13 @@ function FeatureSection({ title, description, imageUrl, reverse }) {
         </div>
 
         {/* Image Section */}
-        <div className="mt-12 sm:mt-16 lg:mt-0">
-          <div
-            className={`${
-              reverse ? "-ml-48 pr-6" : "-mr-48 pl-6"
-            } lg:relative lg:m-0 lg:h-full lg:px-0`}
-          >
+        <div className="mt-12 sm:mt-16 lg:mt-0 px-0">
+          <div className="lg:relative lg:h-full">
             <img
               data-aos="zoom-in"
               src={imageUrl}
               alt=""
-              className="w-full rounded-xl shadow-2xl ring-1 ring-black ring-opacity-5 lg:absolute lg:h-full lg:w-auto lg:max-w-none"
+              className="w-full rounded-xl shadow-2xl ring-1 ring-black ring-opacity-5 lg:absolute lg:h-full lg:w-auto lg:max-w-none object-cover"
             />
           </div>
         </div>
@@ -72,7 +68,7 @@ export default function Features() {
   }, []);
 
   return (
-    <div className="bg-[#EFE7DC] py-20 ">
+    <div className="bg-[#EFE7DC] py-20">
       <FeatureSection
         title="Precision Crafted Design"
         description="Experience timeless elegance with our handcrafted watches, combining premium materials with minimalist aesthetics to suit every occasion."
