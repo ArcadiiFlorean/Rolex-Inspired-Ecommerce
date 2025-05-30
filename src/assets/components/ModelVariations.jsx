@@ -37,7 +37,7 @@ export default function ModelVariations() {
   };
 
   return (
-    <section className="text-center py-10">
+    <section className="text-center py-10 px-4">
       <h2 className="text-5xl font-serif tracking-widest uppercase text-[#D4AF37] drop-shadow-md mb-6">
         Customize your Rolex
       </h2>
@@ -47,8 +47,7 @@ export default function ModelVariations() {
       </p>
 
       {/* Imagine principală cu variație */}
-<div className="relative w-[550px] h-[550px] mx-auto mb-10">
-
+      <div className="relative w-72 h-72 sm:w-96 sm:h-96 md:w-[500px] md:h-[500px] lg:w-[550px] lg:h-[550px] mx-auto mb-10">
         <img
           src={baseWatchImage}
           alt="Base Watch"
@@ -59,37 +58,36 @@ export default function ModelVariations() {
           alt={variations[index].label}
           className={`absolute top-0 left-0 w-full h-full object-contain z-10 transition-opacity duration-300 ${
             fade ? "opacity-0" : "opacity-100"
-          }`}
+          } hover:scale-105 transition-transform`}
         />
       </div>
 
       {/* Selectoare mari cu etichete */}
-      <div className="flex justify-center gap-8">
+      <div className="flex flex-wrap justify-center gap-8">
         {variations.map((v, i) => (
           <div key={v.id} className="flex flex-col items-center">
             <button
               onClick={() => handleSelect(i)}
-              className={`relative w-32 h-32 border-4 rounded-full overflow-hidden transition-transform duration-300 ${
+              className={`relative w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 border-4 rounded-full overflow-hidden transition-transform duration-300 ${
                 index === i
                   ? "scale-110 border-[#D4AF37] shadow-xl"
                   : "opacity-70 hover:opacity-100 hover:scale-105"
               }`}
             >
-              {/* Imagine full cover în interiorul butonului */}
               <img
                 src={v.image}
                 alt={v.label}
                 className="absolute top-0 left-0 w-full h-full object-cover"
               />
             </button>
-            <p className="mt-2 text-base text-gray-800 dark:text-white font-medium">
+            <p className="mt-2 text-sm sm:text-base text-gray-800 dark:text-white font-medium">
               {v.label}
             </p>
           </div>
         ))}
       </div>
 
-      {/* Etichetă activă deasupra */}
+      {/* Etichetă activă */}
       <p className="mt-8 text-xl font-semibold text-gray-700 dark:text-gray-200">
         {variations[index].label}
       </p>
